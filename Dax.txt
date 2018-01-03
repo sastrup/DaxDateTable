@@ -151,21 +151,7 @@ RETURN
             VAR weekIndexDay =
                 // Relative to the current date, NOT the current week
                 INT (
-                    ROUNDDOWN (
-                        (
-                            dayIndex
-                                + -1
-                                    * IF (
-                                        dayOfWeekNumber + weekStart
-                                            <= 6,
-                                        dayOfWeekNumber + weekStart,
-                                        dayOfWeekNumber + weekStart
-                                            - 7
-                                    )
-                        )
-                            / 7,
-                        0
-                    )
+                    ROUNDDOWN ( dayIndex / 8, 0 )
                 )
             VAR weekIndexCalendar =
                 // Relative to the week number of current date, NOT the current date by itself
